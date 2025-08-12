@@ -8,7 +8,7 @@ const moment = require("moment-timezone");
 // ✅ Reverse Geocoding: Get place name from latitude & longitude
 async function getPlaceName(latitude, longitude) {
   const apiKey = process.env.GOOGLE_MAPS_API_KEY;
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+  // const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
   const res = await axios.get(url);
   return res.data.results[0]?.formatted_address || "Unknown Location";
 }
